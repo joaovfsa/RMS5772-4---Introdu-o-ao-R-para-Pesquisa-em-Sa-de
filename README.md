@@ -1,4 +1,7 @@
-LISTAS DE EXERCÍCIOS
-FMRP - Faculdade de Medicina de Ribeirão Preto
-USP - Universidade de São Paulo
-Docente: Edson Zangiacomi Martinez 
+Listas de Exercícios:
+
+Material desenvolvido para a disciplina ministrada na
+FMRP – Faculdade de Medicina de Ribeirão Preto,
+vinculada à Universidade de São Paulo (USP).
+
+Docente: Edson Zangiacomi Martinez
