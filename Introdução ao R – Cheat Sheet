@@ -1,0 +1,61 @@
+Introdução ao R – Cheat Sheet
+Verificando o tipo de um dado
+r
+class(x)   # retorna o tipo do objeto
+Convertendo dados
+r
+as.numeric(x)      # força numérico; retorna NA com aviso se não for possível
+as.character(x)    
+as.logical(1)       # TRUE (qualquer número ≠ 0 vira TRUE)
+Vetores
+r
+nzchar(vetor_char)   # TRUE para elementos que não são strings vazias
+Fatores
+Variáveis categóricas com níveis definidos:
+r
+ecivil <- c(2,3,3,1,4,2,1,2,1,3,1,3,4,3,3)
+ecivilF <- factor(ecivil,
+                  levels = c(1,2,3,4),
+                  labels = c("solteiro","casado","separado","viuvo"))
+Funções de arredondamento
+•	ceiling(x) – menor inteiro ≥ x
+•	floor(x) – maior inteiro ≤ x
+•	round(x, digits = k) – arredonda com k casas decimais (k ≥ 0)
+r
+round(5.6892, digits = 3)   # 5.689
+•	trunc(x) – trunca na direção do zero
+r
+trunc(528.98)   # 528
+trunc(-528.18)  # -528
+Filtros em vetores
+r
+idade <- c(24,24,29,16,13,35,18,14,22,32,29,14,21,25,13,
+           15,34,31,23,16,18,23,21,17,13,19,35,18,22,29,
+           29,35,22,33,14,35,32,34,35,19,25,17,34,14,25,
+           24,13,22,33,19)
+
+idade[idade > 18]                # maiores de 18
+idade[idade > 18 & idade < 30]   # entre 19 e 29
+Maiúsculas e minúsculas
+r
+casefold(animais, upper = TRUE)   # tudo maiúsculo
+casefold(frutas)                  # tudo minúsculo
+toupper(animais)                  # idem ao 1º
+tolower(frutas)                   # idem ao 2º
+Substituição de caracteres
+r
+sub("o", "K", animais)     # troca a 1ª ocorrência de "o" por "K"
+trimws(x)                  # remove espaços no início e no fim
+Identificar pontos em gráfico
+r
+identify(w$Peso, w$Altura)   # clique nos pontos; ESC para sair
+Retorna o número da linha correspondente no data frame.
+Testes de hipóteses
+Comparação de variâncias
+Testa se as variâncias de uma variável contínua são iguais entre dois grupos.
+r
+w <- read.csv2("https://codeberg.org/edsonzmartinez/CursoR/raw/branch/main/Dados02.csv")
+var.test(w$Peso ~ w$fet)   # Peso explicado pelo fator 'fet'
+Hipóteses:
+H₀: σ²₁ / σ²₂ = 1 (variâncias iguais)
+Hₐ: σ²₁ / σ²₂ ≠ 1 (variâncias diferentes)
